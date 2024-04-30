@@ -1,4 +1,4 @@
-package com.example.shoppingapplication
+package com.example.shoppingapplication.ui
 
 import android.os.Bundle
 import android.view.Menu
@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.shoppingapplication.R
 import com.example.shoppingapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

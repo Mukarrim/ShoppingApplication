@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_home_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_counterFragment"
+            app:destination="@id/counterFragment" />
     </fragment>
 
     <fragment
@@ -32,17 +35,22 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.shoppingapplication.DetailFragment"
+        android:name="com.example.shoppingapplication.ui.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.shoppingapplication.ListFragment"
+        android:name="com.example.shoppingapplication.ui.list.ListFragment"
         android:label="List Fragment"
         tools:layout="@layout/fragment_list" />
     <fragment
         android:id="@+id/nav_category"
-        android:name="com.example.shoppingapplication.CategoryFragment"
+        android:name="com.example.shoppingapplication.ui.category.CategoryFragment"
         android:label="Category"
         tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/counterFragment"
+        android:name="com.example.shoppingapplication.ui.counter.CounterFragment"
+        android:label="Counter"
+        tools:layout="@layout/fragment_counter" />
 </navigation>
