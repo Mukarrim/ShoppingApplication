@@ -30,18 +30,22 @@ class CounterFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[CounterViewModel::class.java]
 
+        viewModel.counter.observe(viewLifecycleOwner) { currentCount ->
+            // will always trigger when there's a new value for COUNTER in ViewModel
+            binding.counterValue.text = currentCount.toString()
+        }
+
         binding.apply {
             // set the initial value
-            counterValue.text = viewModel.counterValue.toString()
+//            counterValue.text = viewModel.counterValue.toString()
 
             minus.setOnClickListener {
-                if (viewModel.counterValue > 0)
-                    viewModel.counterValue--
-                counterValue.text = viewModel.counterValue.toString()
+                viewModel.updateCounter(-1)
+//                counterValue.text = viewModel.counterValue.toString()
             }
             plus.setOnClickListener {
-                viewModel.counterValue++
-                counterValue.text = viewModel.counterValue.toString()
+                viewModel.updateCounter(+1)
+//                counterValue.text = viewModel.counterValue.toString()
             }
         }
 
