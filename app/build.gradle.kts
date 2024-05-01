@@ -51,4 +51,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Retrofit -> network
+    implementation(libs.retrofit)
+
+    // OkHttp
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // Glide
+    implementation (libs.glide)
+
+    // Gson
+    implementation(libs.gson)
+    implementation(libs.converter.gson)
 }
