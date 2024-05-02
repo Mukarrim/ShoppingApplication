@@ -11,9 +11,6 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_nav_home_to_detailFragment"
-            app:destination="@id/detailFragment" />
-        <action
             android:id="@+id/action_nav_home_to_counterFragment"
             app:destination="@id/counterFragment" />
     </fragment>
@@ -26,6 +23,9 @@
         <action
             android:id="@+id/action_nav_gallery_to_listFragment"
             app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_nav_gallery_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
 
     <fragment
@@ -36,7 +36,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.shoppingapplication.ui.detail.DetailFragment"
-        android:label="fragment_detail"
+        android:label="Details"
         tools:layout="@layout/fragment_detail" />
     <fragment
         android:id="@+id/listFragment"
