@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -60,9 +62,14 @@ dependencies {
     implementation(libs.logging.interceptor)
 
     // Glide
-    implementation (libs.glide)
+    implementation(libs.glide)
 
     // Gson
     implementation(libs.gson)
     implementation(libs.converter.gson)
+
+    // Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+
 }

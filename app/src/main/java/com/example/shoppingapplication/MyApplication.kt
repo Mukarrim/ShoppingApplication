@@ -1,7 +1,7 @@
 package com.example.shoppingapplication
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class MyApplication : Application() {
-    //Write settings for entire application scope
-}
+@HiltAndroidApp
+class MyApplication : Application()
