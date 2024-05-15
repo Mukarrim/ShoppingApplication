@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.shoppingapplication.data.api.ApiEndpoints1
 import com.example.shoppingapplication.data.api.RetrofitInstance
 import com.example.shoppingapplication.data.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -35,7 +36,6 @@ class HomeViewModel @Inject constructor(
             val result = repository.getDogFacts()
             if (!result.facts.isNullOrEmpty())
                 _text.postValue(result.facts.joinToString())
-//            dataShar
             dataShareState.emit("World!")
         }
     }

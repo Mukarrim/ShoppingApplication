@@ -2,6 +2,8 @@ package com.example.shoppingapplication.di
 
 import com.example.shoppingapplication.data.api.ApiDetail
 import com.example.shoppingapplication.data.api.ApiEndpoints
+import com.example.shoppingapplication.data.api.ApiEndpoints1
+import com.example.shoppingapplication.data.api.ApiEndpoints2
 import com.example.shoppingapplication.data.api.RetrofitInstance
 import com.example.shoppingapplication.data.repository.Repository
 import com.example.shoppingapplication.data.repository.RepositoryImpl
@@ -75,7 +77,17 @@ class MainModule {
     fun apiInstance(retrofit: Retrofit): ApiEndpoints = retrofit.create(ApiEndpoints::class.java)
 
     @Provides
-    fun providesRepository(apiEndpoints: ApiEndpoints): Repository {
-        return RepositoryImpl(apiEndpoints)
+    fun apiInstance1(retrofit: Retrofit): ApiEndpoints1 = retrofit.create(ApiEndpoints1::class.java)
+
+    @Provides
+    fun apiInstance2(retrofit: Retrofit): ApiEndpoints2 = retrofit.create(ApiEndpoints2::class.java)
+
+    @Provides
+    fun providesRepository(
+        apiEndpoints: ApiEndpoints,
+        apiEndpoints1: ApiEndpoints1,
+        apiEndpoints2: ApiEndpoints2
+    ): Repository {
+        return RepositoryImpl(apiEndpoints, apiEndpoints1, apiEndpoints2)
     }
 }
