@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.shoppingapplication.R
 import com.example.shoppingapplication.databinding.FragmentHomeBinding
 import com.example.shoppingapplication.ui.LoginActivity
+import com.firebase.ui.auth.AuthUI
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.auth.FirebaseAuth
@@ -73,7 +74,12 @@ class HomeFragment : Fragment() {
 
             // Sign out the user and send back to login
             FirebaseAuth.getInstance().signOut()
-            startActivity(Intent(activity, LoginActivity::class.java)).also { activity?.finish() }
+            AuthUI.getInstance()
+                .signOut(requireActivity())
+                .addOnCompleteListener {
+                    // ...
+                    startActivity(Intent(activity, LoginActivity::class.java)).also { activity?.finish() }
+                }
         }
 
         return root

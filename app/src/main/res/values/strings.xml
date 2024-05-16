@@ -18,4 +18,14 @@
     <string name="something_went_wrong_try_again_later">Something went wrong, try again later.</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
+
+<!--    FACEBOOK SETTINGS -->
+
+<!--    <string name="facebook_app_id">336827412481160</string>-->
+<!--    <string name="fb_login_protocol_scheme">fb336827412481160</string>-->
+    <string name="facebook_client_token">c2e92db4a97ec158a10ede05df4b5ae1</string>
+    <string name="facebook_application_id" translatable="false">336827412481160</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb336827412481160</string>
+
+
 </resources>
